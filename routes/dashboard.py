@@ -9,7 +9,7 @@ from flask_cors import cross_origin
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BIN_DATA_FILE = os.path.join(BASE_DIR, '..', 'data', 'garbage_data_check2.csv')
 
-cluster = MongoClient(os.getenv('MONGODB_URL'))
+cluster = MongoClient(os.environ.get('MONGODB_URL'))
 db = cluster['final']
 collection = db['garbages']
 

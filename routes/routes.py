@@ -17,7 +17,7 @@ if not os.path.exists('static/vehicle_maps'):
     os.makedirs('static/vehicle_maps')
 
 # Load Google Maps API key from environment variables
-API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
+API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
 if not API_KEY:
     raise ValueError("Google Maps API Key not set. Please set the environment variable 'GOOGLE_MAPS_API_KEY'.")
 gmaps = googlemaps.Client(key=API_KEY)
